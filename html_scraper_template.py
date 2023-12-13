@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ HTML website scraper template """
 
+import datetime
 import requests
 from bs4 import BeautifulSoup
 
@@ -16,19 +17,24 @@ print(page.headers)
 print('--------------------------------')
 print(page.content)
 
+x = datetime.datetime.now()
+f = open("${x}.txt", "a")
+f.write("Now the file has more content!")
+f.close()
+
 soup = BeautifulSoup(page.text, 'html.parser')
 
 
 # get all <h1> elements 
 # on the page
-h1_elements = soup.find_all('h1')
-print('--------------------------------')
-print(h1_elements)
+# h1_elements = soup.find_all('h1')
+# print('--------------------------------')
+# print(h1_elements)
 
 # get the element with id="main-title"
-main_title_element = soup.find(id='main-title')
-print('--------------------------------')
-print(main_title_element)
+# main_title_element = soup.find(id='main-title')
+# print('--------------------------------')
+# print(main_title_element)
 
 # find the email input element
 # through its "name" attribute
