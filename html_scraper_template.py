@@ -15,3 +15,5 @@ headers=headers,
 print(page.headers)
 print('--------------------------------')
 print(page.content)
+
+soup = BeautifulSoup(page.text, 'html.parser')
