@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+""" Mostaql website scraper for geting related jops """
+
 import requests
 import datetime
 from bs4 import BeautifulSoup
