@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+""" HTML website scraper template """
+
 import requests
 from bs4 import BeautifulSoup
 
