@@ -65,15 +65,29 @@ for project_data in rows:
         # 'description': descriptiion,
     })
 
+# Create project tags list to save
+project_tags = {
+    # Structure:
+    #   url : [tag1, tag2, ...]
+}
 
+# loop on projects
 for project in open_projects:
-    page = requests.get(project['url'],
+    # get every project page
+    project_url = project['url']
+    page = requests.get(project_url,
         headers=headers,
     )
 
+    # parse it
     soup = BeautifulSoup(page.text, 'html.parser')
 
-    soup.find('')
+    # find project tages
+    tags = soup.find('')
+
+    project_tags[project_url] = tags
+
+# when tags to be same with wanted tags, send notification
 
 
 # print(open_projects)
