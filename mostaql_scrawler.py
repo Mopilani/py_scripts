@@ -15,14 +15,14 @@ page = requests.get(url,
 headers=headers,
 )
 
-print(page.headers)
-print('--------------------------------')
-print(page.content)
+# print(page.headers)
+# print('--------------------------------')
+# print(page.content)
 
 x = datetime.datetime.now()
-f = open("${x}.txt", "a")
-f.write("Now the file has more content!")
-f.close()
+# f = open("{x}.txt", "b")
+# f.write(page.content)
+# f.close()
 
 soup = BeautifulSoup(page.text, 'html.parser')
 
@@ -32,6 +32,43 @@ soup = BeautifulSoup(page.text, 'html.parser')
 # h1_elements = soup.find_all('h1')
 # print('--------------------------------')
 # print(h1_elements)
+
+rows = soup.find_all('td')
+print('--------------------------------')
+print(rows)
+# row = soup.find('td')
+# row.;
+open_projects = []
+
+# extract the text of the row
+for project_data in rows:
+    project_data.find()
+    url = project_data.find('a', href=True)['href']
+    title = project_data.find('a', class_="").text
+    time = project_data.find('time')['datetime']
+    # offers = project_data.find('li', class_="fa fa-fw fa-ticket")
+    offers = project_data.find('li', class_="text-muted").find('i')
+    # descriptiion = project_data.find('a', class_="details-url");
+    open_projects.append({
+        'url': url,
+        'title': title,
+        'time': time,
+        'offers': offers,
+        # 'description': descriptiion,
+    })
+    print('--------------------------------')
+    print({
+        'url': url,
+        'title': title,
+        'time': time,
+        'offers': offers,
+        # 'description': descriptiion,
+    })
+
+# print(open_projects)
+
+# print(row_td)
+
 
 # get the element with id="main-title"
 # main_title_element = soup.find(id='main-title')
@@ -44,4 +81,4 @@ soup = BeautifulSoup(page.text, 'html.parser')
 
 # find all the centered elements
 # on the page
-# centered_element = soup.find_all(class_='text-center')
+# centered_element = soup.find_all(class_='row-td')
