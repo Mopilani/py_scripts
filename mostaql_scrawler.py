@@ -12,7 +12,7 @@ headers = {
 url = "https://mostaql.com/projects?category=development&budget_max=10000&sort=latest"
 
 page = requests.get(url,
-headers=headers,
+    headers=headers,
 )
 
 # print(page.headers)
@@ -64,6 +64,17 @@ for project_data in rows:
         'offers': offers,
         # 'description': descriptiion,
     })
+
+
+for project in open_projects:
+    page = requests.get(project['url'],
+        headers=headers,
+    )
+
+    soup = BeautifulSoup(page.text, 'html.parser')
+
+    soup.find('')
+
 
 # print(open_projects)
 
