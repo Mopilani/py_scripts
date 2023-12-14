@@ -1,5 +1,10 @@
 #!/usr/bin/python3
-""" Mostaql website scraper for geting related jops """
+""" Mostaql website scraper for geting related jops.
+
+Mostaql platform have mail notification system sends new projects related to your
+jop name, but not in the realtime.
+at all this project is just for learning, it's useless more than useful at this time.
+"""
 
 import requests
 import datetime
